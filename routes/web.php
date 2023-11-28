@@ -21,6 +21,8 @@ use App\Http\Controllers\AlunoController;
 |
 */
 
+Route::post('/contratar/{aluno}', 'App\Http\Controllers\AlunoController@contratar')->name('aluno.contratar');
+
 Route::middleware('locale')->group(function () {
 
     Route::put('/locale', [LocaleController::class, 'setLocale'])->name('locale');
@@ -40,6 +42,7 @@ Route::middleware('locale')->group(function () {
         Route::any('log', [LogController::class, 'index'])->name('log.index');
 
         //Rotas para CRUD usuário
+
         Route::resource('user', UserController::class, ['except' => ['show']]);
         Route::resource('curso', CursoController::class, ['except' => ['show']]);
         Route::resource('aluno', AlunoController::class);
@@ -54,5 +57,4 @@ Route::middleware('locale')->group(function () {
     });
 
     Route::get('/', [SiteController::class, 'index'])->name('site');
-
 });

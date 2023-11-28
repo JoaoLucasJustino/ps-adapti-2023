@@ -2,15 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\aluno;
+use App\Models\curso;
+
 use Illuminate\Http\Request;
 
 
 class SiteController extends Controller
 {
 
+    private $alunos;
+    private $cursos;
+
+    public function __construct(aluno $aluno, curso $curso)
+    {
+        $this->alunos = $aluno;
+        $this->cursos = $curso;
+    }
+
+
     public function index()
     {
-        return view('site.index');
+
+        $cursos = $this->cursos->all();
+        $alunos = $this->alunos->all();
+        return view('site.index', compact('alunos', 'cursos'));
     }
 
 

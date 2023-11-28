@@ -1,0 +1,202 @@
+:root {
+    --bgcabecalho: #31b6a8;
+    --bgbody: #ccf6ef;
+    --bgcard: rgba(245, 236, 236, 0.41);
+    --bgcontratar: #31b6a8;
+    --bgcontratado: #fff;
+}
+
+body {
+    margin: 0;
+    font-family: Lato, Sans-serif;
+    background-color: #ccf6ef;
+    transition: 0.5s;
+}
+
+#cabecalho {
+    background-color: var(--bgcabecalho);
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 80px;
+    align-items: center;
+    box-shadow: 5px 5px 15px -1px black;
+    transition: 0.5s;
+}
+
+#cabecalho div {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+#cabecalho .logo {
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    transition: 0.25s;
+}
+
+.logo img {
+    width: 120px;
+}
+
+#cabecalho a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 100;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+}
+
+#cabecalho a:hover {
+    color: #6ffff1;
+    transition: 0.5s;
+}
+
+#cabecalho ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+}
+
+#mudar {
+    background-color: white;
+    padding: 30;
+    border-radius: 50%;
+    border-color: #162623;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#mudar:hover {
+    background-color: gray;
+}
+
+#mudar::before {
+    content: "\f186";
+    font-family: fontAwesome;
+}
+
+.dark #mudar::before {
+    content: "\f185";
+}
+
+#principal {
+    max-width: 1000px;
+    margin: auto;
+    padding: 10px;
+    transition: 0.5s;
+}
+
+.card {
+    background: var(--bgcard);
+
+    display: flex;
+    gap: 40px;
+    width: auto;
+    height: auto;
+    border-radius: 1.4rem;
+    padding: 25px;
+    box-shadow: 5px 5px 15px -1px rgba(0, 0, 0, 0.41);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: black;
+    transition: 0.5s;
+}
+
+.card img {
+    width: 250px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 1.4rem;
+}
+
+#info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#info ul {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    font-weight: 100;
+    list-style-type: none;
+}
+
+#conteines-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 25px;
+}
+
+.botaoContratar {
+    width: 100%;
+    background-color: var(--bgcontratar);
+    border-radius: 1.2rem;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.botaoContratado {
+    width: 100%;
+    background-color: var(--bgcontratado);
+    border-radius: 1.2rem;
+    padding: 10px 20px;
+    color: black;
+    border: none;
+    transition: 0.5s;
+}
+
+.dark #cabecalho {
+    background-color: #162623;
+    color: white;
+}
+
+.dark {
+    background-color: #808080;
+}
+
+.dark .card {
+    background-color: rgba(211, 211, 211, 1);
+}
+
+.dark .botaoContratar {
+    background-color: #162623;
+}
+
+.dark .botaoContratado {
+    background-color: #808080;
+}
+
+@media (max-width: 640px) {
+    #cabecalho {
+        flex-direction: column;
+    }
+
+    @media (max-width: 446px) {
+        #cabecalho .logo {
+            flex-direction: column;
+        }
+
+        h1 {
+            margin: 0;
+        }
+    }
+
+    @media (max-width: 478px) {
+        .card {
+            flex-direction: column;
+        }
+    }
+}
